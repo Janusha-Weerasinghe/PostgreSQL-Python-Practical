@@ -78,3 +78,11 @@ average_score = df["score"].mean()
 print("\nAverage Score:")
 print(average_score)
 
+# ============================================================
+# 7. Find High Performers
+# ============================================================
+
+high_performers = df[df["score"] >= 80]
+
+print("\nHigh Performing Students:")
+print(high_performers)
