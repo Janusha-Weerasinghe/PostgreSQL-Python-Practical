@@ -1,6 +1,6 @@
 CREATE ROLE student_api_user
 WITH LOGIN
-PASSWORD 'Gfdsa@54321';
+PASSWORD '';
 
 GRANT CONNECT
 ON DATABASE student_db
