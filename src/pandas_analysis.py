@@ -12,7 +12,7 @@ from sqlalchemy import create_engine
 
 DATABASE_URL = (
     #"postgresql+psycopg://postgres:Password"
-    
+   
     "@localhost:5432/student_db"
 )
 
@@ -68,4 +68,13 @@ print(df.describe())
 
 print("\nMissing Values:")
 print(df.isnull().sum())
+
+# ============================================================
+# 6. Calculate Average Score
+# ============================================================
+
+average_score = df["score"].mean()
+
+print("\nAverage Score:")
+print(average_score)
 
