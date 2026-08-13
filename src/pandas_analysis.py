@@ -62,3 +62,10 @@ df.info()
 print("\nStatistical Summary:")
 print(df.describe())
 
+# ============================================================
+# 5. Check Missing Values
+# ============================================================
+
+print("\nMissing Values:")
+print(df.isnull().sum())
+
