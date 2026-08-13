@@ -9,8 +9,7 @@ conn = psycopg.connect(
     port=5432,
     dbname="student_db",
     user="postgres",
-    password="YOUR_PASSWORD"
-    #password=""
+    password=""
 )
 
 print("Connected to PostgreSQL!")
@@ -41,30 +40,51 @@ print("Students table created!")
 # Insert a student
 # ============================================
 
+# with conn.cursor() as cur:
+
+#     cur.execute("""
+#         INSERT INTO students
+#         (name, age, email, score)
+#         VALUES (%s, %s, %s, %s)
+#     """, (
+#         "Janusha",
+#         28,
+#         "janusha@example.com",
+#         88.5
+#     ))
+#  #We're using parameters instead of constructing SQL using string concatenation.
+
+#    # This is important for preventing SQL injection.
+
+#      # Don't do:
+
+#      # query = f"INSERT INTO students VALUES ('{name}')"
+
+#   # Use parameterized queries.
+# conn.commit()
+
+# print("Student inserted successfully!")
+
+# ============================================
+# Insert Multiple Students
+# ============================================
+students = [
+    ("Amal", 22, "amal@example.com", 75.0),
+    ("Kamal", 24, "kamal@example.com", 91.0),
+    ("Nimal", 21, "nimal@example.com", 68.5),
+    ("Sara", 23, "sara@example.com", 82.0)
+]
+
 with conn.cursor() as cur:
 
-    cur.execute("""
-        INSERT INTO students
-        (name, age, email, score)
-        VALUES (%s, %s, %s, %s)
-    """, (
-        "Janusha",
-        28,
-        "janusha@example.com",
-        88.5
-    ))
- #We're using parameters instead of constructing SQL using string concatenation.
+    for student in students:
+        cur.execute("""
+            INSERT INTO students
+            (name, age, email, score)
+            VALUES (%s, %s, %s, %s)
+        """, student)
 
-   # This is important for preventing SQL injection.
-
-     # Don't do:
-
-     # query = f"INSERT INTO students VALUES ('{name}')"
-
-  # Use parameterized queries.
 conn.commit()
-
-print("Student inserted successfully!")
 
 
 # ============================================
