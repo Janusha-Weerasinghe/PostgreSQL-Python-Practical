@@ -65,27 +65,62 @@ print("Students table created!")
 
 # print("Student inserted successfully!")
 
+# # ============================================
+# # Insert Multiple Students
+# # ============================================
+# students = [
+#     ("Amal", 22, "amal@example.com", 75.0),
+#     ("Kamal", 24, "kamal@example.com", 91.0),
+#     ("Nimal", 21, "nimal@example.com", 68.5),
+#     ("Sara", 23, "sara@example.com", 82.0)
+# ]
+
+# with conn.cursor() as cur:
+
+#     for student in students:
+#         cur.execute("""
+#             INSERT INTO students
+#             (name, age, email, score)
+#             VALUES (%s, %s, %s, %s)
+#         """, student)
+
+# conn.commit()
+
 # ============================================
-# Insert Multiple Students
+# Read Data
 # ============================================
-students = [
-    ("Amal", 22, "amal@example.com", 75.0),
-    ("Kamal", 24, "kamal@example.com", 91.0),
-    ("Nimal", 21, "nimal@example.com", 68.5),
-    ("Sara", 23, "sara@example.com", 82.0)
-]
+
 
 with conn.cursor() as cur:
 
-    for student in students:
-        cur.execute("""
-            INSERT INTO students
-            (name, age, email, score)
-            VALUES (%s, %s, %s, %s)
-        """, student)
+    cur.execute("""
+        SELECT id, name, age, email, score
+        FROM students
+        ORDER BY id
+    """)
+
+    rows = cur.fetchall()
+
+    for row in rows:
+        print(row)
+
+# ============================================
+# Update Data
+# ============================================
+
+
+with conn.cursor() as cur:
+
+    cur.execute("""
+        UPDATE students
+        SET score = %s
+        WHERE email = %s
+    """, (
+        92.0,
+        "janusha@example.com"
+    ))
 
 conn.commit()
-
 
 # ============================================
 # Close connection
