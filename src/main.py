@@ -10,6 +10,7 @@ conn = psycopg.connect(
     dbname="student_db",
     user="postgres",
     password=""
+
 )
 
 print("Connected to PostgreSQL!")
@@ -104,20 +105,40 @@ with conn.cursor() as cur:
     for row in rows:
         print(row)
 
-# ============================================
-# Update Data
-# ============================================
+# # ============================================
+# # Update Data
+# # ============================================
 
 
+# with conn.cursor() as cur:
+
+#     cur.execute("""
+#         UPDATE students
+#         SET score = %s
+#         WHERE email = %s
+#     """, (
+#         92.0,
+#         "janusha@example.com"
+#     ))
+
+# conn.commit()
+
+# Never casually do:
+
+# UPDATE students
+# SET score = 0;
+# because that updates every row.
+
+# ============================================
+# Delete Data
+# ============================================
 with conn.cursor() as cur:
 
     cur.execute("""
-        UPDATE students
-        SET score = %s
+        DELETE FROM students
         WHERE email = %s
     """, (
-        92.0,
-        "janusha@example.com"
+        "nimal@example.com",
     ))
 
 conn.commit()
