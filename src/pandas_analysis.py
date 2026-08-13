@@ -86,3 +86,18 @@ high_performers = df[df["score"] >= 80]
 
 print("\nHigh Performing Students:")
 print(high_performers)
+
+# ============================================================
+# 7. Find High Performers (Descending order — Highest → Lowest)
+# ============================================================
+
+
+high_performers = df[df["score"] >= 80]
+
+high_performers = high_performers.sort_values(
+    by="score",
+    ascending=False
+)
+
+print("\nHigh Performing Students:")
+print(high_performers)
