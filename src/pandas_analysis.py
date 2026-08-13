@@ -5,16 +5,44 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
+
 # ============================================================
 # 1. Create Database Connection
 # ============================================================
 
 DATABASE_URL = (
-    "postgresql+psycopg://postgres:YOUR_PASSWORD"
+    #"postgresql+psycopg://postgres:Password"
+    
     "@localhost:5432/student_db"
 )
 
 engine = create_engine(DATABASE_URL)
 
-print("Connected to PostgreSQL!")
+print("Database engine created.")
 
+# High Important if password have "@" mark The problem is the @ character .In a PostgreSQL SQLAlchemy URL, @ has a special meaning: it separates the password from the host.
+# So we need to URL-encode @ as %40.
+
+# ============================================================
+# 2. Load Data from PostgreSQL
+# ============================================================
+
+query = """
+SELECT
+    id,
+    name,
+    age,
+    score
+FROM students;
+"""
+
+df = pd.read_sql(query, engine)
+
+print("Successfully connected to PostgreSQL!")
+
+# ============================================================
+# 3. Display Dataset
+# ============================================================
+
+print("\nStudent Dataset:")
+print(df)
