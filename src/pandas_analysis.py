@@ -46,3 +46,19 @@ print("Successfully connected to PostgreSQL!")
 
 print("\nStudent Dataset:")
 print(df)
+
+# ============================================================
+# 4. Explore the Dataset
+# ============================================================
+
+print("\nFirst 5 Records:")
+print(df.head())
+
+
+print("\nDataset Information:")
+df.info()
+
+
+print("\nStatistical Summary:")
+print(df.describe())
+
