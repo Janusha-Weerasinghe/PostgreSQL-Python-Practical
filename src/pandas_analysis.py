@@ -12,7 +12,7 @@ from sqlalchemy import create_engine
 
 DATABASE_URL = (
     #"postgresql+psycopg://postgres:Password"
-   
+  
     "@localhost:5432/student_db"
 )
 
@@ -97,6 +97,19 @@ high_performers = df[df["score"] >= 80]
 high_performers = high_performers.sort_values(
     by="score",
     ascending=False
+)
+
+print("\nHigh Performing Students:")
+print(high_performers)
+
+# ============================================================
+# 7. Find High Performers (Ascending order — Lowest → Highest)
+# ============================================================
+high_performers = df[df["score"] >= 80]
+
+high_performers = high_performers.sort_values(
+    by="score",
+    ascending=True
 )
 
 print("\nHigh Performing Students:")
