@@ -1128,9 +1128,8 @@ This keeps database logic out of `main.py`.
 
 ---
 
-<!--# 24. Step 12 — `main.py`
-
-🔥 This is where we create our API.
+# 24. Step 12 — `main.py`
+This is where we create our API.
 
 Open:
 
@@ -1404,7 +1403,7 @@ closes the session.
 
 ---
 
-# 27. Step 13 — `__init__.py`
+<!--# 27. Step 13 — `__init__.py`
 
 For now:
 
