@@ -1403,7 +1403,7 @@ closes the session.
 
 ---
 
-<!--# 27. Step 13 — `__init__.py`
+# 27. Step 13 — `__init__.py`
 
 For now:
 
@@ -1593,8 +1593,7 @@ psycopg
    ↓
 PostgreSQL
 ```
-
-🔥 That's a real backend application.
+That's a real backend application.
 
 ---
 
@@ -1878,85 +1877,4 @@ Alembic Migrations
        ↓
 PostgreSQL
 ```
-
-Don't add Alembic yet. **First understand this project.**
-
 ---
-
-# 41. Your Learning Checklist
-
-Don't move to the next PostgreSQL practical until you can do these yourself:
-
-* [ ] Create `student_db`
-* [ ] Create `student_api_user`
-* [ ] Create `.env`
-* [ ] Create Conda environment
-* [ ] Install FastAPI
-* [ ] Install SQLAlchemy
-* [ ] Install psycopg
-* [ ] Understand `database.py`
-* [ ] Understand `models.py`
-* [ ] Understand `schemas.py`
-* [ ] Understand `crud.py`
-* [ ] Understand `main.py`
-* [ ] Run Uvicorn
-* [ ] Open `/docs`
-* [ ] Create a student with POST
-* [ ] Retrieve students with GET
-* [ ] Retrieve one student
-* [ ] Update a student
-* [ ] Delete a student
-* [ ] Verify the data in pgAdmin
-* [ ] Explain the complete request → database flow
-
----
-
-# 🎯 What I Want You to Do Now
-
-**Don't create all the files and paste everything blindly at once.** That will make this another copy-paste project and you won't really learn it.
-
-Let's do it in stages:
-
-```text
-STEP 1
-Create project + Conda environment
-        ↓
-STEP 2
-Install packages
-        ↓
-STEP 3
-Create PostgreSQL database + user
-        ↓
-STEP 4
-Create .env + .gitignore
-        ↓
-STEP 5
-Build database.py
-        ↓
-STEP 6
-Build models.py
-        ↓
-STEP 7
-Build schemas.py
-        ↓
-STEP 8
-Build crud.py
-        ↓
-STEP 9
-Build main.py
-        ↓
-STEP 10
-Run FastAPI
-        ↓
-STEP 11
-Test Swagger
-        ↓
-STEP 12
-Verify PostgreSQL
-```
-
-### **For your current screen:**
-
-Just **click `Cancel` on Stack Builder**. You don't need to install anything there for this project.
-
-Then create the `student-api` folder in VS Code and the Conda environment. Once that's done, the next thing to build is **`database.py`**, because everything else depends on establishing the PostgreSQL connection correctly. --> 
