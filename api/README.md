@@ -986,7 +986,7 @@ That's one of the reasons API schemas are useful.
 
 ---
 
-<!--# 22. Step 11 — `crud.py`
+# 22. Step 11 — `crud.py`
 
 Now we implement the actual database operations.
 
@@ -1128,7 +1128,7 @@ This keeps database logic out of `main.py`.
 
 ---
 
-# 24. Step 12 — `main.py`
+<!--# 24. Step 12 — `main.py`
 
 🔥 This is where we create our API.
 
