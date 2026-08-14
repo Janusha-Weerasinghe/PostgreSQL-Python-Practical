@@ -841,7 +841,7 @@ creates an index for that column.
 
 --- -->
 
-<!-- # 19. Step 10 — `schemas.py`
+ # 19. Step 10 — `schemas.py`
 
 Now we need to define what data the API accepts and returns.
 
@@ -986,7 +986,7 @@ That's one of the reasons API schemas are useful.
 
 ---
 
-# 22. Step 11 — `crud.py`
+<!--# 22. Step 11 — `crud.py`
 
 Now we implement the actual database operations.
 
