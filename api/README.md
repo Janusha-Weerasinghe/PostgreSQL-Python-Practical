@@ -531,7 +531,7 @@ The most important one here is:
 because it contains your database credentials.
 
 ---
-<!-- 
+
 # 14. Step 8 — `database.py`
 
 Now we're going to build the database connection.
@@ -839,9 +839,9 @@ index=True
 
 creates an index for that column.
 
----
+--- -->
 
-# 19. Step 10 — `schemas.py`
+<!-- # 19. Step 10 — `schemas.py`
 
 Now we need to define what data the API accepts and returns.
 
@@ -1960,4 +1960,4 @@ Verify PostgreSQL
 
 Just **click `Cancel` on Stack Builder**. You don't need to install anything there for this project.
 
-Then create the `student-api` folder in VS Code and the Conda environment. Once that's done, the next thing to build is **`database.py`**, because everything else depends on establishing the PostgreSQL connection correctly. -->
+Then create the `student-api` folder in VS Code and the Conda environment. Once that's done, the next thing to build is **`database.py`**, because everything else depends on establishing the PostgreSQL connection correctly. --> 
